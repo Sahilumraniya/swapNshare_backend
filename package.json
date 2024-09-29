@@ -27,7 +27,8 @@
     "test": "yarn run lint && yarn run compile && yarn run jest",
     "lint": "eslint src/. test/. --config .eslintrc.json --ext .ts --fix",
     "dev": "ts-node-dev --no-notify src/",
-    "start": "yarn run compile && node lib/",
+    "build": "yarn run compile",
+    "start": "node lib/index.js",
     "jest": "jest --forceExit",
     "compile": "shx rm -rf lib/ && tsc"
   },
