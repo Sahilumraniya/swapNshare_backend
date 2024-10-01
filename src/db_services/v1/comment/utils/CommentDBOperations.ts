@@ -1,27 +1,27 @@
-import { Model , Document } from "mongoose";
+import { Model, Document } from "mongoose";
 import { Params, ServiceAddons } from '@feathersjs/feathers';
 
 import {
-    Product_QUERY as Query,
-    Product_POST as Body_POST,
-    Product_FIND as Data,
-    Product_GET as Datum,
-    Product_PATCH as Body_Patch,
-} from '../interfaces/ProductInterface';
-import { Product } from "../product.class";
+    Comment_QUERY as Query,
+    Comment_POST as Body_POST,
+    Comment_FIND as Data,
+    Comment_GET as Datum,
+    Comment_PATCH as Body_Patch,
+} from '../interfaces/CommentInterface';
+import { Comment } from "../comment.class";
 
-export class ProductDBOperations {
-    private static _service: Product & ServiceAddons<any>;
+export class CommentDBOperations {
+    private static _service: Comment & ServiceAddons<any>;
     static _model: Model<Document<any>>;
-    static _servicePath = 'v1/product';
+    static _servicePath = 'v1/comment';
 
     /**
      * Initialize service
      * @param service - Service value.
      */
-    static initializeService(service: Product & ServiceAddons<any>) {
-        ProductDBOperations._service = service;
-        ProductDBOperations._model = service.Model;
+    static initializeService(service: Comment & ServiceAddons<any>) {
+        CommentDBOperations._service = service;
+        CommentDBOperations._model = service.Model;
     }
 
     /**
@@ -40,7 +40,7 @@ export class ProductDBOperations {
         params?: Params;
     }) {
         console.log("test ", dbQuery, specifiedQuery, params);
-        return await ProductDBOperations._service
+        return await CommentDBOperations._service
             ._find({
                 query: {
                     ...dbQuery,
@@ -69,7 +69,7 @@ export class ProductDBOperations {
         params?: Params;
     }) {
         console.log("test ", dbQuery, specifiedQuery, params);
-        return await ProductDBOperations._service
+        return await CommentDBOperations._service
             ._find({
                 query: {
                     ...dbQuery,
@@ -101,7 +101,7 @@ export class ProductDBOperations {
         specifiedQuery?: any;
         params?: Params;
     }) {
-        return await ProductDBOperations._service
+        return await CommentDBOperations._service
             ._get(id, {
                 query: {
                     ...dbQuery,
@@ -133,7 +133,7 @@ export class ProductDBOperations {
         specifiedQuery?: any;
         params?: Params;
     }) {
-        return await ProductDBOperations._service
+        return await CommentDBOperations._service
             .create(
                 {
                     ...dbBody,
@@ -173,7 +173,7 @@ export class ProductDBOperations {
         specifiedQuery?: any;
         params?: Params;
     }) {
-        return await ProductDBOperations._service
+        return await CommentDBOperations._service
             .create(dbBody, {
                 ...params,
                 query: {
@@ -209,7 +209,7 @@ export class ProductDBOperations {
         specifiedQuery?: any;
         params?: Params;
     }) {
-        return await ProductDBOperations._service
+        return await CommentDBOperations._service
             .patch(
                 id,
                 {
@@ -251,7 +251,7 @@ export class ProductDBOperations {
         specifiedQuery?: any;
         params?: Params;
     }) {
-        return await ProductDBOperations._service
+        return await CommentDBOperations._service
             .remove(id, {
                 ...params,
                 query: {

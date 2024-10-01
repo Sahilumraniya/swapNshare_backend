@@ -11,3 +11,4 @@ export const userPath = 'v1/users';
 export const categoryPath = 'v1/category';
 export const productPath = 'v1/product';
 export const roomPath = 'v1/room';
+export const commentPath = 'v1/comment';

@@ -1,5 +1,4 @@
 import { HooksObject } from '@feathersjs/feathers';
-import PatchDeleted from '../../../hooks/PatchDeleted';
 import { disallow, iff, isProvider } from 'feathers-hooks-common';
 
 export default {
@@ -10,7 +9,7 @@ export default {
     create: [],
     update: [disallow()],
     patch: [],
-    remove: [PatchDeleted()]
+    remove: []
   },
 
   after: {

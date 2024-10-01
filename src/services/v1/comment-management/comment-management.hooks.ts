@@ -1,16 +1,19 @@
 import { HooksObject } from '@feathersjs/feathers';
-import PatchDeleted from '../../../hooks/PatchDeleted';
-import { disallow, iff, isProvider } from 'feathers-hooks-common';
+import * as authentication from '@feathersjs/authentication';
+import { SetUserName } from './hook/SetUserId';
+// Don't remove this comment. It's needed to format import lines nicely.
+
+const { authenticate } = authentication.hooks;
 
 export default {
   before: {
-    all: [iff(isProvider('server')).else(disallow())],
+    all: [ authenticate('jwt') ],
     find: [],
     get: [],
-    create: [],
-    update: [disallow()],
+    create: [SetUserName()],
+    update: [],
     patch: [],
-    remove: [PatchDeleted()]
+    remove: []
   },
 
   after: {

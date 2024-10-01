@@ -1,28 +1,28 @@
 import { Id, NullableId, Paginated, Params, ServiceAddons, ServiceMethods } from '@feathersjs/feathers';
 import { Application } from '../../../declarations';
-import { Product } from '../../../db_services/v1/product/product.class';
-import { productPath } from '../../../service_endpoints/services';
+import { Comment } from '../../../db_services/v1/comment/comment.class';
+import { commentPath } from '../../../service_endpoints/services';
 import { FeathersError } from '@feathersjs/errors';
 
 interface Data { }
 
 interface ServiceOptions { }
 
-export class ProductManagement implements ServiceMethods<Data> {
+export class CommentManagement implements ServiceMethods<Data> {
   app: Application;
   options: ServiceOptions;
-  service: Product & ServiceAddons<any>;
+  service: Comment & ServiceAddons<any>;
 
   constructor(options: ServiceOptions = {}, app: Application) {
     this.options = options;
     this.app = app;
-    this.service = app.service(productPath);
+    this.service = app.service(commentPath);
   }
 
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async find(params?: Params): Promise<Data[] | Paginated<Data>> {
-    // console.log("log", params);
+    console.log("log", params);
 
     return await this.service.find({ ...params, provider: undefined }).catch((e: FeathersError) => {
       throw e;
