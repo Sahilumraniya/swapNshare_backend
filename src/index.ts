@@ -8,6 +8,10 @@ dotenv.config({
 import app from './app';
 
 const port = app.get('port');
+
+// export default (req: any, res: any) => {
+//     app(req, res);
+// };
 const server = app.listen(port);
 
 const name = app.get('app_name');

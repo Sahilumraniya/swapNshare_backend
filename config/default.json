@@ -1,6 +1,7 @@
 {
   "host": "localhost",
   "port": 3030,
+  "app_name": "Swap and Share",
   "public": "../public/",
   "paginate": {
     "default": 10,
