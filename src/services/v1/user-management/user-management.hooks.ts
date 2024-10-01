@@ -10,7 +10,7 @@ export default {
     all: [],
     find: [SetDefaultQuery('status', UserStatus.ACTIVE)],
     get: [],
-    create: [FRequired(['email', 'password']),VailidateUser()],
+    create: [FRequired(['name', 'email', 'password']), VailidateUser()],
     update: [],
     patch: [CheckRole()],
     remove: []

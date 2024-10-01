@@ -11,6 +11,7 @@ export enum UserRole {
 
 export interface User_GET {
     _id: string;
+    name: string;
     email: string;
     role: UserRole;
     acessToken: string;
@@ -27,6 +28,7 @@ export interface User_FIND {
 }
 
 export interface User_POST {
+    name: string;
     email: string;
     password: string;
     role?: UserRole;
@@ -35,6 +37,7 @@ export interface User_POST {
 }
 
 export interface User_PATCH {
+    name?: string;
     email?: string;
     password?: string;
     role?: UserRole;
@@ -43,6 +46,7 @@ export interface User_PATCH {
 }
 
 export interface User_QUERY {
+    name: string;
     email?: any;
     role?: any;
     status?: any;
