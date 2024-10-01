@@ -10,7 +10,7 @@ export default function (app: Application): Model<any> {
   const modelName = 'users';
   const mongooseClient: Mongoose = app.get('mongooseClient');
   const schema = new mongooseClient.Schema({
-
+    name: { type: String, require: true },
     email: { type: String, unique: true, lowercase: true },
     password: { type: String, },
     role: {
