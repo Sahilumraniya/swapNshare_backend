@@ -1,15 +1,15 @@
-// Initializes the `v1/product` service on path `/v1/product`
+// Initializes the `v1/comment` service on path `/v1/comment`
 import { ServiceAddons } from '@feathersjs/feathers';
 import { Application } from '../../../declarations';
-import { Product } from './product.class';
-import createModel from './product.model';
-import hooks from './product.hooks';
-import { ProductDBOperations } from './utils/ProductDBOperations';
+import { Comment } from './comment.class';
+import createModel from './comment.model';
+import hooks from './comment.hooks';
+import { CommentDBOperations } from './utils/CommentDBOperations';
 
 // Add this service to the service type index
 declare module '../../../declarations' {
   interface ServiceTypes {
-    'v1/product': Product & ServiceAddons<any>;
+    'v1/comment': Comment & ServiceAddons<any>;
   }
 }
 
@@ -21,12 +21,11 @@ export default function (app: Application): void {
   };
 
   // Initialize our service with any options it requires
-  app.use('/v1/product', new Product(options, app));
+  app.use('/v1/comment', new Comment(options, app));
 
   // Get our initialized service so that we can register hooks
-  const service = app.service('v1/product');
-
-  ProductDBOperations.initializeService(service);
+  const service = app.service('v1/comment');
+  CommentDBOperations.initializeService(service);
 
   service.hooks(hooks);
 }
