@@ -46,7 +46,7 @@ export interface User_PATCH {
 }
 
 export interface User_QUERY {
-    name: string;
+    name?: string;
     email?: any;
     role?: any;
     status?: any;
