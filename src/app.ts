@@ -37,14 +37,26 @@ app.set('aws', {
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || '',
   region: process.env.AWS_REGION || 'ap-south-1'
 });
+<<<<<<< HEAD
 app.set('aws_s3_backet', process.env.BUCKET_NAME)
 app.set('mongodb', process.env.MONGO_URL)
+=======
+app.set('aws_s3_backet', process.env.BUCKET_NAME);
+app.set('mongodb', process.env.MONGO_URL);
+>>>>>>> d0d74a8 (add google auth)
 
 // Enable security, CORS, compression, favicon and body parsing
 app.use(helmet({
   contentSecurityPolicy: false
 }));
+<<<<<<< HEAD
 app.use(cors());
+=======
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true,
+}));
+>>>>>>> d0d74a8 (add google auth)
 app.use(compress());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

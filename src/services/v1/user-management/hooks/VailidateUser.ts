@@ -15,9 +15,12 @@ export const VailidateUser = () => async (context: HookContext) => {
         }
     })
 
+<<<<<<< HEAD
     console.log(user);
 
 
+=======
+>>>>>>> d0d74a8 (add google auth)
     if (user && user.length) {
         if (user[0].status === UserStatus.ACTIVE) {
             throw new BadRequest("Your Account is already created");

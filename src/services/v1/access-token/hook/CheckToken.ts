@@ -41,15 +41,31 @@ export const CheckToken = () => async (context: HookContext) => {
 
         } else {
             if (!sub) throw new BadRequest("Invaild Token");
+<<<<<<< HEAD
             const user = await UserDBOperations.getDetails({
                 id: sub,
                 dbQuery: {
                     status: UserStatus.ACTIVE
+=======
+            const user = await UserDBOperations.getDataWithoutPagination({
+                dbQuery: {
+                    status: UserStatus.ACTIVE
+                },
+                specifiedQuery: {
+                    $or: [
+                        { _id: sub },
+                        { googleId: sub }
+                    ]
+>>>>>>> d0d74a8 (add google auth)
                 }
             }).catch((e) => {
                 console.error("Error ::", e);
                 throw new BadRequest("User not found");
+<<<<<<< HEAD
             })
+=======
+            }).then((res) => res[0])
+>>>>>>> d0d74a8 (add google auth)
 
             const authenticateService: AuthenticationService = app.service("authentication");
             const expTime = app.get("jwtOptions").expiresIn;

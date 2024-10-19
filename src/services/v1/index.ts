@@ -7,6 +7,10 @@ import getUploadUrl from './get-upload-url/get-upload-url.service';
 import accessToken from './access-token/access-token.service';
 import roomManagement from './room-management/room-management.service';
 import commentManagement from './comment-management/comment-management.service';
+<<<<<<< HEAD
+=======
+import authentication from './authentication/authentication.service';
+>>>>>>> d0d74a8 (add google auth)
 // Don't remove this comment. It's needed to format import lines nicely.
 
 export default function (app: Application): void {
@@ -18,4 +22,8 @@ export default function (app: Application): void {
   app.configure(accessToken);
   app.configure(roomManagement);
   app.configure(commentManagement);
+<<<<<<< HEAD
+=======
+  app.configure(authentication);
+>>>>>>> d0d74a8 (add google auth)
 }
