@@ -27,11 +27,7 @@ export default {
   },
 
   error: {
-<<<<<<< HEAD
     // all: [(err:any)=>{console.log(err);}],
-=======
-    // all: [(err: any) => { console.log(err); }],
->>>>>>> d0d74a8 (add google auth)
     all: [],
     find: [],
     get: [],

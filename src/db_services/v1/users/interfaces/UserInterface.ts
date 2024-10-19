@@ -14,10 +14,7 @@ export interface User_GET {
     name: string;
     email: string;
     role: UserRole;
-<<<<<<< HEAD
-=======
     googleId: string;
->>>>>>> d0d74a8 (add google auth)
     acessToken: string;
     status: UserStatus;
     createdAt: Date;
@@ -34,14 +31,9 @@ export interface User_FIND {
 export interface User_POST {
     name: string;
     email: string;
-<<<<<<< HEAD
-    password: string;
-    role?: UserRole;
-=======
     password?: string;
     role?: UserRole;
     googleId?: string;
->>>>>>> d0d74a8 (add google auth)
     acessToken?: string;
     status?: UserStatus;
 }
@@ -51,10 +43,7 @@ export interface User_PATCH {
     email?: string;
     password?: string;
     role?: UserRole;
-<<<<<<< HEAD
-=======
     googleId?: string;
->>>>>>> d0d74a8 (add google auth)
     acessToken?: string;
     status?: UserStatus;
 }
@@ -64,10 +53,7 @@ export interface User_QUERY {
     email?: any;
     role?: any;
     status?: any;
-<<<<<<< HEAD
-=======
     googleId?: any;
->>>>>>> d0d74a8 (add google auth)
     accessToken?: any;
     createdAt?: any;
     updatedAt?: any;
