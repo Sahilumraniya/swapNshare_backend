@@ -15,9 +15,6 @@ export const VailidateUser = () => async (context: HookContext) => {
         }
     })
 
-    console.log(user);
-
-
     if (user && user.length) {
         if (user[0].status === UserStatus.ACTIVE) {
             throw new BadRequest("Your Account is already created");

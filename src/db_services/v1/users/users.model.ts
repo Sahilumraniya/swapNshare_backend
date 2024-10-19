@@ -17,6 +17,7 @@ export default function (app: Application): Model<any> {
       type: String, default: UserRole.USER,
       enum: [UserRole.USER, UserRole.ADMIN]
     },
+    googleId: { type: String, default: null },
     acessToken: { type: String, default: null },
     status: {
       type: Number, default: UserStatus.ACTIVE,

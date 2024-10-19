@@ -41,15 +41,20 @@ export const CheckToken = () => async (context: HookContext) => {
 
         } else {
             if (!sub) throw new BadRequest("Invaild Token");
-            const user = await UserDBOperations.getDetails({
-                id: sub,
+            const user = await UserDBOperations.getDataWithoutPagination({
                 dbQuery: {
                     status: UserStatus.ACTIVE
+                },
+                specifiedQuery: {
+                    $or: [
+                        { _id: sub },
+                        { googleId: sub }
+                    ]
                 }
             }).catch((e) => {
                 console.error("Error ::", e);
                 throw new BadRequest("User not found");
-            })
+            }).then((res) => res[0])
 
             const authenticateService: AuthenticationService = app.service("authentication");
             const expTime = app.get("jwtOptions").expiresIn;

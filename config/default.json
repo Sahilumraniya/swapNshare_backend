@@ -13,7 +13,8 @@
     "secret": "IuCphpgai1CQKZEthmdVa+l+w0c=",
     "authStrategies": [
       "jwt",
-      "local"
+      "local",
+      "google"
     ],
     "jwtOptions": {
       "header": {
